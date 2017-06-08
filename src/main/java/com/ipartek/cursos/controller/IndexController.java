@@ -1,4 +1,4 @@
-package com.ipartek.cursos;
+package com.ipartek.cursos.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
