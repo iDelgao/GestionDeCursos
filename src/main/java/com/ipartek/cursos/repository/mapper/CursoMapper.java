@@ -7,6 +7,13 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.ipartek.cursos.domain.Curso;
 
+/**
+ * Clase para mapear los datos de un curso
+ * 
+ * @author Iván Delgado García
+ *
+ */
+
 public class CursoMapper implements RowMapper<Curso> {
 
 	@Override

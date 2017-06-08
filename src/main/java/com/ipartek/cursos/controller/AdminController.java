@@ -19,11 +19,11 @@ public class AdminController {
 	private static final Logger LOG = LoggerFactory.getLogger(AdminController.class);
 
 	/**
-	 * Listar cursos
+	 * Listar cursos para poder gestionarlos
 	 * 
 	 * @param model
 	 *            modelo
-	 * @return lista de usuarios
+	 * @return lista de cursos
 	 */
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String listar(Model model) {

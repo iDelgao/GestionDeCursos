@@ -42,7 +42,9 @@
             
             <!-- Enlace en la derecha de la barra de navegación -->
             <ul class="nav navbar-nav navbar-right">
-             <li><a href="admin">Administar</a></li>
+            	<li>
+             		<a href="admin" class="btn btn-info" role="button">Administar</a>
+				</li>
             </ul> 
                     
           </div>

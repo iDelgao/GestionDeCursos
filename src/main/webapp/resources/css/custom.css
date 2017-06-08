@@ -1,9 +1,12 @@
-.col-md-4 h2 {
-	text-align: center;
+.navbar-nav>li>a {
+	color: #FFFFFF!important;
+	margin: 5px 0px 5px 0px;
+	line-height: 10px!important;	
 }
 
-.col-md-8 img {
- 	
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #31B0D5!important;
+	color: #FFFFFF!important;	
 }
 
 

@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.ipartek.cursos.controller" />
+	<context:component-scan base-package="com.ipartek.cursos" />
 	
 	
 	
