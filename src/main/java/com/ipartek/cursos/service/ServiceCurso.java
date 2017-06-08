@@ -8,4 +8,12 @@ public interface ServiceCurso {
 
 	List<Curso> listar();
 
+	Curso buscarPorID(long id);
+
+	boolean crear(Curso c);
+
+	boolean modificar(Curso c);
+
+	boolean eliminar(long id);
+
 }

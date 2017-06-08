@@ -13,7 +13,7 @@ import com.ipartek.cursos.repository.DAOCurso;
 /**
  * Implementacion del servicio Curso
  * 
- * @author Iván Delgado García
+ * @author Ivan Delgado Garcia
  *
  */
 @Service(value = "serviceCurso")
@@ -26,8 +26,33 @@ public class ServiceCursoImpl implements ServiceCurso {
 
 	@Override()
 	public List<Curso> listar() {
-		this.LOG.trace("listar cursos");
+		this.LOG.trace("Listar cursos");
 		return this.daoCurso.getAll();
+	}
+
+	@Override
+	public Curso buscarPorID(long id) {
+		LOG.trace("Buscamos curso por su id: " + id);
+		Curso curso = daoCurso.getById(id);
+		return curso;
+	}
+
+	@Override
+	public boolean crear(Curso c) {
+		LOG.trace("Creando curso: " + c);
+		return daoCurso.insert(c);
+	}
+
+	@Override
+	public boolean modificar(Curso c) {
+		LOG.trace("Modificando curso: " + c);
+		return daoCurso.update(c);
+	}
+
+	@Override
+	public boolean eliminar(long id) {
+		LOG.trace("Eliminando por id: " + id);
+		return daoCurso.delete(id);
 	}
 
 }

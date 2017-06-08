@@ -17,15 +17,13 @@ public interface DAOCurso {
 	void setDatasource(DataSource ds);
 
 	List<Curso> getAll();
+	
+	Curso getById(long id);
 
-	/*
-	 * Curso getById(int id);
-	 * 
-	 * boolean insert(Curso c);
-	 * 
-	 * boolean update(Curso u);
-	 * 
-	 * boolean delete(int id) throws DataIntegrityViolationException;
-	 */
+	boolean insert(Curso r);
+
+	boolean update(Curso r);
+
+	boolean delete(long id);
 
 }
