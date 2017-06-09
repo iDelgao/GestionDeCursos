@@ -1,4 +1,4 @@
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../includes/header_admin.jsp"%>
 
 
 <h1>BackOffice</h1>
@@ -17,9 +17,11 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>Id.</th>
+						<th>#</th>
 						<th>Nombre</th>
 						<th>Código</th>
+						<th></th>
+						<th></th>
 
 					</tr>
 				</thead>
@@ -27,8 +29,10 @@
 					<c:forEach items="${cursos}" var="c">
 						<tr>
 							<td>${cursos.lastIndexOf(c)+1}</td>
-							<td><a href="admin/edit/${c.id}">${c.nomCurso}</a></td>
-							<td><a href="admin/edit/${c.id}">${c.codCurso}</a></td>
+							<td>${c.nomCurso}</td>
+							<td>${c.codCurso}</td>
+							<td><a href="admin/edit/${c.id}"><span class="glyphicon glyphicon-pencil"></a></td>
+							<td><a href="admin/delete/${c.id}"><span class="glyphicon glyphicon-trash"></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

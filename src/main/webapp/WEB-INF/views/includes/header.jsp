@@ -12,7 +12,6 @@
 	<title>Cursos</title>
 	<base href="/cursos/" /> 
 	
-	
 	<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css" rel="stylesheet">
 	
@@ -43,7 +42,7 @@
             <!-- Enlace en la derecha de la barra de navegación -->
             <ul class="nav navbar-nav navbar-right">
             	<li>
-             		<a href="admin" class="btn btn-info" role="button">Administar</a>
+             		<a href="admin" class="btn btn-info" role="button">Login</a>
 				</li>
             </ul> 
                     
