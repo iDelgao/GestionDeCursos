@@ -5,16 +5,20 @@
 						http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/security
 						http://www.springframework.org/schema/security/spring-security.xsd">
-						
+
 	<http auto-config="true">
 		<intercept-url pattern="/admin*" access="ROLE_USER" />
+		<form-login login-page="/login.jsp"
+			username-parameter="usuario" 
+			login-processing-url="/login"
+			password-parameter="clave" authentication-failure-url="/error.jsp" />
 	</http>
-	
-		<authentication-manager alias="authenticationManager">
-			<authentication-provider>
-				<user-service>
-					<user authorities="ROLE_USER" name="admin" password="2017#admin" />
-				</user-service>
-			</authentication-provider>
-		</authentication-manager>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider>
+			<user-service>
+				<user authorities="ROLE_USER" name="admin" password="2017#admin" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
 </beans:beans>

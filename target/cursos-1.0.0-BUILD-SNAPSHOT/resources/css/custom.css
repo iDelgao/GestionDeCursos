@@ -9,6 +9,19 @@
 	color: #FFFFFF!important;	
 }
 
+/***** FOOTER *****/
+
+.footer {
+  	margin: 0 auto;
+    bottom: 0;
+    height: 60px;
+    line-height: 60px;
+    background-color: #F8F8F8;
+    border-radius: 4px;
+}
+
+/***** END: FOOTER *****/
+
 
 
 
