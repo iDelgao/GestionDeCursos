@@ -24,9 +24,9 @@ import com.ipartek.cursos.domain.Curso;
 import com.ipartek.cursos.repository.mapper.CursoMapper;
 
 /**
- * DAO para conectarse a la BBDD
+ * Implementación del DAO con SQLs de modificación y acceso a la BBDDs.
  * 
- * @author Ivï¿½n Delgado Garcï¿½a
+ * @author Iván Delgado García
  *
  */
 @Repository(value = "daoCurso")
@@ -45,14 +45,14 @@ public class DAOCursoImpl implements DAOCurso {
 	}
 
 	private static final String SQL_GET_ALL = "SELECT * FROM cursos";
-	private static final String SQL_GET_BY_ID ="SELECT `id`, `nomCurso`, `codCurso` FROM `curso` WHERE `id` = ?;";
-	private static final String SQL_INSERT = "INSERT INTO `curso` (`nombCurso`, `codCurso`) VALUES (?, ?);";
-	private static final String SQL_UPDATE = "UPDATE `curso` SET `nombCurso`= ?,`codCurso`= ? WHERE `id`= ? ;";
-	private static final String SQL_DELETE = "DELETE FROM `curso` WHERE `id` = ?;";
+	private static final String SQL_GET_BY_ID = "SELECT `id`, `nomCurso`, `codCurso` FROM `cursos` WHERE `id` = ?;";
+	private static final String SQL_INSERT = "INSERT INTO `cursos` (`nomCurso`, `codCurso`) VALUES (?, ?);";
+	private static final String SQL_UPDATE = "UPDATE `cursos` SET `nomCurso`= ?,`codCurso`= ? WHERE `id`= ? ;";
+	private static final String SQL_DELETE = "DELETE FROM `cursos` WHERE `id` = ?;";
 
 	@Override
 	public List<Curso> getAll() {
-		
+
 		ArrayList<Curso> lista = new ArrayList<Curso>();
 
 		try {
@@ -64,10 +64,10 @@ public class DAOCursoImpl implements DAOCurso {
 		}
 		return lista;
 	}
-	
+
 	@Override
 	public Curso getById(long id) {
-		
+
 		Curso c = new Curso();
 
 		try {
@@ -113,7 +113,7 @@ public class DAOCursoImpl implements DAOCurso {
 
 	@Override
 	public boolean update(Curso c) {
-		
+
 		LOG.trace("update " + c);
 		boolean resul = false;
 		int affectedRows = -1;
@@ -133,7 +133,7 @@ public class DAOCursoImpl implements DAOCurso {
 
 	@Override
 	public boolean delete(long id) {
-		
+
 		LOG.trace("eliminar " + id);
 		boolean resul = false;
 		int affectedRows = -1;

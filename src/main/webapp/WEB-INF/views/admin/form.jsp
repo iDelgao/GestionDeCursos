@@ -18,15 +18,15 @@ ${msg}
 
 			<form:hidden path="id" readonly="true" />
 			<br>
-			<form:label path="curso">Curso:</form:label>
-			<form:input path="curso" />
+			<form:label path="nomCurso">Curso:</form:label>
+			<form:input path="nomCurso" />
 			<br>
-			<form:errors path="curso" cssStyle="color:red;" />
+			<form:errors path="nomCurso" cssStyle="color:red;" />
 			<br>
-			<form:label path="codigo">Codigo:</form:label>
-			<form:input path="codigo" />
+			<form:label path="codCurso">Codigo:</form:label>
+			<form:input path="codCurso" />
 			<br>
-			<form:errors path="codigo" cssStyle="color:red;" />
+			<form:errors path="codCurso" cssStyle="color:red;" />
 			<br>
 
 			<c:choose>
@@ -54,11 +54,6 @@ ${msg}
 	</div>
 
 </div>
-<!-- <div class="row"> -->
 
-<c:if test="${curso.id != -1}">
-	<br>
-	<a style="color: red;" href="admin/delete/${curso.id}">Eliminar</a>
-</c:if>
 
 <%@ include file="../includes/footer.jsp"%>

@@ -1,5 +1,7 @@
 package com.ipartek.cursos.controller;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +18,14 @@ import com.ipartek.cursos.service.ServiceCurso;
 /**
  * Contolador para el administrador.
  * 
- * @author Iván Delgado
+ * @author Ivan Delgado
  *
  */
 @Controller()
 public class AdminController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AdminController.class);
-	
+
 	@Autowired()
 	private ServiceCurso serviceCurso;
 
@@ -36,20 +38,21 @@ public class AdminController {
 	 */
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String listar(Model model) {
-		
-		LOG.info("");
 
+		LOG.info("Entrando: Página administrador.");
+
+		model.addAttribute("cursos", serviceCurso.listar());
 		return "admin/index";
 	}
 
-	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/edit", method = RequestMethod.GET)
 	public String irFormularioNuevo(Model model) {
 
 		model.addAttribute("curso", new Curso());
 		return "admin/form";
 	}
 
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/edit/{id}", method = RequestMethod.GET)
 	public String irFormularioEditar(@PathVariable int id, Model model) {
 
 		Curso curso = this.serviceCurso.buscarPorID(id);
@@ -57,10 +60,10 @@ public class AdminController {
 		return "admin/form";
 	}
 
-	@RequestMapping(value = "/crear", method = RequestMethod.POST)
-	public String crear(/* @Valid */Curso curso, BindingResult bindingResult, Model model) {
+	@RequestMapping(value = "/admin/crear", method = RequestMethod.POST)
+	public String crear(@Valid Curso curso, BindingResult bindingResult, Model model) {
 
-		LOG.info("recibimos datos del formulario " + curso);
+		LOG.info("Recibimos datos del formulario " + curso);
 		String msg = null;
 
 		// Validar datos del formulario
@@ -82,7 +85,7 @@ public class AdminController {
 		}
 
 		model.addAttribute("msg", msg);
-		model.addAttribute("cursos", this.serviceCurso.listar());
+		model.addAttribute("cursos", serviceCurso.listar());
 
 		return "admin/index";
 	}
@@ -100,7 +103,7 @@ public class AdminController {
 	 * 
 	 * 
 	 */
-	@RequestMapping(value = "/delete/{idCurso}", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/delete/{idCurso}", method = RequestMethod.GET)
 	public String eliminar(@PathVariable int idCurso, Model model) {
 
 		LOG.info("Eliminar curso " + idCurso);

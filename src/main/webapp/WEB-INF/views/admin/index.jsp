@@ -3,13 +3,8 @@
 
 <h1>BackOffice</h1>
 
-<p>Página privada de gestión de cursos</p>
-<p>Desde donde podremos consultar, modificar, crear y eliminar
-	nuevos cursos</p>
-<p>Tendrá un botón que servirá para leer un archivo CSV y cargará
-	los datos de los cursos en la BBDD</p>
-
-<a href="admin/edit">Crear Nuevo</a>
+<a href="admin/edit" class="btn btn-info" role="button">Crear Nuevo</a>
+<a href="#" class="btn btn-info" role="button">Subir archivo</a>
 
 <!-- atributo request -->
 <p>${msg}</p>

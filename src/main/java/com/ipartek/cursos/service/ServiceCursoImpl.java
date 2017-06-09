@@ -32,26 +32,26 @@ public class ServiceCursoImpl implements ServiceCurso {
 
 	@Override
 	public Curso buscarPorID(long id) {
-		LOG.trace("Buscamos curso por su id: " + id);
+		this.LOG.trace("Buscar curso por su id: " + id);
 		Curso curso = daoCurso.getById(id);
 		return curso;
 	}
 
 	@Override
 	public boolean crear(Curso c) {
-		LOG.trace("Creando curso: " + c);
+		this.LOG.trace("Crear curso: " + c);
 		return daoCurso.insert(c);
 	}
 
 	@Override
 	public boolean modificar(Curso c) {
-		LOG.trace("Modificando curso: " + c);
+		this.LOG.trace("Modificar curso: " + c);
 		return daoCurso.update(c);
 	}
 
 	@Override
 	public boolean eliminar(long id) {
-		LOG.trace("Eliminando por id: " + id);
+		this.LOG.trace("Eliminando por id: " + id);
 		return daoCurso.delete(id);
 	}
 

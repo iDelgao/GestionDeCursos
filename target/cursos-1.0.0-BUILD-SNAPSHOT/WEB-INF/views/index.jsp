@@ -14,7 +14,7 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>N</th>
+						<th>Id.</th>
 						<th>Nombre</th>
 						<th>Código</th>
 
@@ -24,15 +24,14 @@
 					<c:forEach items="${cursos}" var="c">
 						<tr>
 							<td>${cursos.lastIndexOf(c)+1}</td>
-							<td>${c.nombre}</td>
-							<td>${c.tiradas}</td>
+							<td>${c.nomCurso}</td>
+							<td>${c.codCurso}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
-	
 </div>
 	
 	
