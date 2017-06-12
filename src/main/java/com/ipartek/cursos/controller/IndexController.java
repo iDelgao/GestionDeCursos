@@ -10,13 +10,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ipartek.cursos.service.ServiceCurso;
 
-@Controller
+/**
+ * Controlador de la página inicial.
+ * 
+ * @author Iván Delgado
+ *
+ */
+@Controller()
 public class IndexController {
 
 	@Autowired()
 	private ServiceCurso serviceCurso;
 
 	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+
+	/**
+	 * 
+	 * @param model
+	 *            Devuelve la lista de cursos
+	 * @return a la página de inicio.
+	 */
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {

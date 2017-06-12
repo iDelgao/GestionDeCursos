@@ -43,31 +43,58 @@ public class Curso {
 
 	// GETTERS AND SETTERS
 
+	/**
+	 * 
+	 * @return id del curso.
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * 
+	 * @param id
+	 *            curso
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	/**
+	 * 
+	 * @return nombre del curso.
+	 */
 	public String getNomCurso() {
 		return nomCurso;
 	}
 
+	/**
+	 * 
+	 * @param nomCurso
+	 *            set nombre.
+	 */
 	public void setNomCurso(String nomCurso) {
 		this.nomCurso = nomCurso;
 	}
 
+	/**
+	 * 
+	 * @return código del curso.
+	 */
 	public String getCodCurso() {
 		return codCurso;
 	}
 
+	/**
+	 * 
+	 * @param codCurso
+	 *            set código.
+	 */
 	public void setCodCurso(String codCurso) {
 		this.codCurso = codCurso;
 	}
 
-	@Override
+	@Override()
 	public String toString() {
 		return "Curso [id=" + id + ", nomCurso=" + nomCurso + ", codCurso=" + codCurso + "]";
 	}

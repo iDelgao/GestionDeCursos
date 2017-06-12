@@ -45,6 +45,12 @@ public class AdminController {
 		return "admin/index";
 	}
 
+	/**
+	 * 
+	 * @param model
+	 *            Devuelve un curso nuevo
+	 * @return formulario.
+	 */
 	@RequestMapping(value = "/admin/edit", method = RequestMethod.GET)
 	public String irFormularioNuevo(Model model) {
 
@@ -52,16 +58,35 @@ public class AdminController {
 		return "admin/form";
 	}
 
+	/**
+	 * 
+	 * @param id
+	 *            ID del curso a editar.
+	 * @param model
+	 *            Curso editado.
+	 * @return formulario.
+	 */
 	@RequestMapping(value = "/admin/edit/{id}", method = RequestMethod.GET)
-	public String irFormularioEditar(@PathVariable int id, Model model) {
+	public String irFormularioEditar(@PathVariable() int id, Model model) {
 
 		Curso curso = this.serviceCurso.buscarPorID(id);
 		model.addAttribute("curso", curso);
 		return "admin/form";
 	}
 
+	/**
+	 * 
+	 * @param curso
+	 *            Nuevo curso.
+	 * @param bindingResult
+	 *            Validar datos.
+	 * @param model
+	 *            msg: mensaje para el usuario. Lista cursos con el nuevo curso
+	 *            añadido.
+	 * @return página de administración de cursos.
+	 */
 	@RequestMapping(value = "/admin/crear", method = RequestMethod.POST)
-	public String crear(@Valid Curso curso, BindingResult bindingResult, Model model) {
+	public String crear(@Valid() Curso curso, BindingResult bindingResult, Model model) {
 
 		LOG.info("Recibimos datos del formulario " + curso);
 		String msg = null;
@@ -104,7 +129,7 @@ public class AdminController {
 	 * 
 	 */
 	@RequestMapping(value = "/admin/delete/{idCurso}", method = RequestMethod.GET)
-	public String eliminar(@PathVariable int idCurso, Model model) {
+	public String eliminar(@PathVariable() int idCurso, Model model) {
 
 		LOG.info("Eliminar curso " + idCurso);
 		String view = "redirect: ../";

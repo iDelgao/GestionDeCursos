@@ -1,43 +1,65 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 html {
-	font-family: "Roboto", sans-serif!important;
+	font-family: "Roboto", sans-serif !important;
 }
 
+body {
+	background-color: #43A047;
+}
+
+.page-content>.row {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+	margin-top: 30px;
+}
+
+.jumbotron {
+	margin-top: 100px;
+	border-radius: 0!important;
+	-webkit-box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.5);
+	box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.5);
+}
+
+/***** NAVBAR *****/
+
+.navbar-default {
+	background-color: #EEEEEE!important;
+	border-color: #EEEEEE!important;
+}
 
 .navbar-nav>li>a {
-	color: #FFFFFF!important;
+	color: #FFFFFF !important;
 	margin: 5px 0px 5px 0px;
-	line-height: 10px!important;	
+	line-height: 10px !important;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4CAF50;
+	width: 125%;
+	border: 0;
+	padding: 15px;
+	font-size: 0.875em;
+	cursor: pointer;
+	border-radius: 0!important;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-    background-color: #31B0D5!important;
-	color: #FFFFFF!important;	
+	background-color: #43A047 !important;
+	color: #FFFFFF !important;
 }
 
 /***** FOOTER *****/
 
 .footer {
-  	margin: 0 auto;
-    bottom: 0;
-    height: 60px;
-    line-height: 60px;
-    background-color: #F8F8F8;
-    border-radius: 4px;
+	margin-top: 25px;
+	width: 100%;
+	bottom: 0;
+	line-height: 50px;
+	background-color: #EEEEEE;
 }
 
-/***** END: FOOTER *****/
-
-
-
-
-
-
-
-
-
-
-
-
-
+.footer .list-inline {
+	margin: -25px 0px 0px -5px;
+}
