@@ -4,7 +4,8 @@
 <h1>BackOffice</h1>
 
 <a href="admin/edit" class="btn btn-info" role="button">Crear Nuevo</a>
-<a href="#" class="btn btn-info" role="button">Subir archivo</a>
+
+<a href="admin/curso/migrar" class="btn btn-info" role="button">Subir archivo</a>
 
 <!-- atributo request -->
 <p>${msg}</p>

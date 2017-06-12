@@ -1,5 +1,8 @@
 package com.ipartek.cursos.controller;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.ipartek.cursos.domain.Curso;
 import com.ipartek.cursos.service.ServiceCurso;
+import com.opencsv.CSVReader;
 
 /**
  * Contolador para el administrador.
@@ -145,5 +149,40 @@ public class AdminController {
 		model.addAttribute("msg", msg);
 		return view;
 	}
+	
+	@RequestMapping(value = "/admin/curso/subir", method = RequestMethod.GET)
+	public String migrando(Model model) {
+		
+		String archivo = "C:/workspace/GestionDeCursos/deploy/cursos.csv";
+		String msg = "";
+        try {
+
+            CSVReader reader = new CSVReader(new FileReader(archivo),';');
+            String [] nextLine;
+            Curso curso = new Curso();
+            int contador = 0;
+            while ((nextLine = reader.readNext()) != null) {
+               System.out.println(nextLine[1] + nextLine[8] );
+               curso.setNomCurso(nextLine[1]);
+               curso.setCodCurso(nextLine[8]);
+               if (!"".equals(curso.getNomCurso()) && !"".equals(curso.getCodCurso())) {
+            	   serviceCurso.crear(curso);
+            	   contador++;
+               }
+            }
+            reader.close();
+            msg = "Fichero leido. Añadidos " + contador + " cursos nuevos";
+
+        } catch (FileNotFoundException e) {
+        	msg = "Archivo no encontrado.";
+            e.printStackTrace();
+        } catch (Exception e) {
+        	msg = "Error volcando datos.";
+            e.printStackTrace();
+        }
+        model.addAttribute("msg", msg);
+		return "admin/subirFichero";
+	}
+	
 
 }
