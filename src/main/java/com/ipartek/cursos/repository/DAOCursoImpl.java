@@ -46,18 +46,27 @@ public class DAOCursoImpl implements DAOCurso {
 
 	private static final String SQL_GET_ALL = "SELECT `id`, `nomCurso`, `codCurso` FROM `cursos`";
 	private static final String SQL_GET_DIEZ = "SELECT `id`, `nomCurso`, `codCurso` FROM `cursos` ORDER BY `id` DESC LIMIT 10;";
+	private static final String SQL_GET_ALL_FILTER = "SELECT `id`, `nomCurso`, `codCurso` FROM `cursos` WHERE `nomCurso` LIKE '%' ? '%' ORDER BY `id` DESC LIMIT 500;";
 	private static final String SQL_GET_BY_ID = "SELECT `id`, `nomCurso`, `codCurso` FROM `cursos` WHERE `id` = ?;";
 	private static final String SQL_INSERT = "INSERT INTO `cursos` (`nomCurso`, `codCurso`) VALUES (?, ?);";
 	private static final String SQL_UPDATE = "UPDATE `cursos` SET `nomCurso`= ?,`codCurso`= ? WHERE `id`= ? ;";
 	private static final String SQL_DELETE = "DELETE FROM `cursos` WHERE `id` = ?;";
 
 	@Override()
-	public List<Curso> getAll() {
+	public List<Curso> getAll(String filter) {
 
 		ArrayList<Curso> lista = new ArrayList<Curso>();
 
 		try {
-			lista = (ArrayList<Curso>) this.jdbcTemplate.query(SQL_GET_ALL, new CursoMapper());
+
+			if (filter == null) {
+				lista = (ArrayList<Curso>) this.jdbcTemplate.query(SQL_GET_ALL, new CursoMapper());
+			} else {
+				lista = (ArrayList<Curso>) this.jdbcTemplate.query(SQL_GET_ALL_FILTER, new Object[] { filter },
+						new CursoMapper());
+
+			}
+
 		} catch (EmptyResultDataAccessException e) {
 			this.LOG.error("No existen cursos todavia", e);
 		} catch (Exception e) {
@@ -67,7 +76,7 @@ public class DAOCursoImpl implements DAOCurso {
 	}
 
 	@Override()
-	public List<Curso> getDiez() {
+	public List<Curso> getDiez(String filter) {
 		ArrayList<Curso> lista = new ArrayList<Curso>();
 
 		try {

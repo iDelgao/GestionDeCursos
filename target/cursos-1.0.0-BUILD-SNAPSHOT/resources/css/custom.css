@@ -8,6 +8,14 @@ body {
 	background-color: #43A047;
 }
 
+h1 {
+	text-align: center;
+	font-family: "Roboto", sans-serif !important;
+	font-weight: Bold;
+	color: #43A047 !important;
+	margin: -10px 0px 30px 0px;
+}
+
 .page-content>.row {
 	margin-left: 0px !important;
 	margin-right: 0px !important;
@@ -16,17 +24,16 @@ body {
 
 .jumbotron {
 	margin-top: 100px;
-	border-radius: 0!important;
-	-webkit-box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.5);
-	box-shadow: 2px 3px 2px 0px rgba(0,0,0,0.5);
+	border-radius: 0 !important;
+	-webkit-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 /***** NAVBAR *****/
-
 .navbar-default {
-	background-color: #EEEEEE!important;
-	border-color: #EEEEEE!important;
+	background-color: #EEEEEE !important;
+	border-color: #EEEEEE !important;
 }
 
 .navbar-nav>li>a {
@@ -42,7 +49,7 @@ body {
 	padding: 15px;
 	font-size: 0.875em;
 	cursor: pointer;
-	border-radius: 0!important;
+	border-radius: 0 !important;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -50,9 +57,85 @@ body {
 	color: #FFFFFF !important;
 }
 
-/***** FOOTER *****/
+/***** TABLA *****/
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-color: #ccc;
+	-webkit-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.5);
+}
 
+.tg td {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 0px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #ccc;
+	color: #333;
+	background-color: #fff;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+}
+
+.tg th {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 0px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #ccc;
+	color: #333;
+	background-color: #4CAF50;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+}
+
+.tg .tg-imnp {
+	font-weight: bold;
+	background-color: #4CAF50;
+	text-align: center;
+	vertical-align: top
+}
+
+.tg .tg-pxng {
+	background-color: #ffffff;
+	color: #000000;
+	vertical-align: top
+}
+
+.tg-eiwr {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: right;
+	vertical-align: top
+}
+
+.tg .tg-7un6 {
+	background-color: #ffffff;
+	color: #000000;
+	text-align: center;
+	vertical-align: top
+}
+
+/***** FOOTER *****/
 .footer {
+	margin-top: 25px;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	line-height: 50px;
+	background-color: #EEEEEE;
+}
+
+.footer_admin {
 	margin-top: 25px;
 	width: 100%;
 	bottom: 0;
@@ -62,4 +145,33 @@ body {
 
 .footer .list-inline {
 	margin: -25px 0px 0px -5px;
+}
+
+.footer_admin .list-inline {
+	margin: -25px 0px 0px -5px;
+}
+
+/***** BOTON SUBIR *****/
+#boton_up {
+	display: none;
+	background-color: #4CAF50;
+	bottom: 15px;
+	right: 72px;
+	position: fixed;
+	width: 40px;
+	height: 40px;
+}
+
+#boton_up:hover {
+	background-color: #43A047;
+}
+
+#boton_up i {
+	color: #FFFFFF;
+}
+
+
+/***** HERRAMIENTAS ADMIN *****/
+.herramientas {
+	margin-left: -15px;
 }

@@ -82,7 +82,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"> <span
 								class="glyphicon glyphicon-search"></span>
-							</span> <input id="buscar_curso" type="text" class="form-control"
+							</span> <input id="buscador" type="text" class="form-control"
 								placeholder="Nombre del curso...">
 						</div>
 					</form>

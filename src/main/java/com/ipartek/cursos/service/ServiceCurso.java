@@ -16,7 +16,13 @@ public interface ServiceCurso {
 	 * 
 	 * @return lista de cursos
 	 */
-	List<Curso> listar();
+	List<Curso> listar(String filter);
+
+	/**
+	 * 
+	 * @return listar 10 últimos cursos
+	 */
+	List<Curso> listarDiez(String filter);
 
 	/**
 	 * Busca curso por ID

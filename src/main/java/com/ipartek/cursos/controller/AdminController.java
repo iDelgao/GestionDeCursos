@@ -45,7 +45,7 @@ public class AdminController {
 
 		LOG.info("Entrando: Página administrador.");
 
-		model.addAttribute("cursos", serviceCurso.listar());
+		model.addAttribute("cursos", serviceCurso.listar(null));
 		return "admin/index";
 	}
 
@@ -114,7 +114,7 @@ public class AdminController {
 		}
 
 		model.addAttribute("msg", msg);
-		model.addAttribute("cursos", serviceCurso.listar());
+		model.addAttribute("cursos", serviceCurso.listar(null));
 
 		return "admin/index";
 	}
@@ -149,40 +149,39 @@ public class AdminController {
 		model.addAttribute("msg", msg);
 		return view;
 	}
-	
+
 	@RequestMapping(value = "/admin/curso/subir", method = RequestMethod.GET)
 	public String migrando(Model model) {
-		
+
 		String archivo = "C:/workspace/GestionDeCursos/deploy/cursos.csv";
 		String msg = "";
-        try {
+		try {
 
-            CSVReader reader = new CSVReader(new FileReader(archivo),';');
-            String [] nextLine;
-            Curso curso = new Curso();
-            int contador = 0;
-            while ((nextLine = reader.readNext()) != null) {
-               System.out.println(nextLine[1] + nextLine[8] );
-               curso.setNomCurso(nextLine[1]);
-               curso.setCodCurso(nextLine[8]);
-               if (!"".equals(curso.getNomCurso()) && !"".equals(curso.getCodCurso())) {
-            	   serviceCurso.crear(curso);
-            	   contador++;
-               }
-            }
-            reader.close();
-            msg = "Fichero leido. Añadidos " + contador + " cursos nuevos";
+			CSVReader reader = new CSVReader(new FileReader(archivo), ';');
+			String[] nextLine;
+			Curso curso = new Curso();
+			int contador = 0;
+			while ((nextLine = reader.readNext()) != null) {
+				System.out.println(nextLine[1] + nextLine[8]);
+				curso.setNomCurso(nextLine[1]);
+				curso.setCodCurso(nextLine[8]);
+				if (!"".equals(curso.getNomCurso()) && !"".equals(curso.getCodCurso())) {
+					serviceCurso.crear(curso);
+					contador++;
+				}
+			}
+			reader.close();
+			msg = "Fichero leido. Añadidos " + contador + " cursos nuevos";
 
-        } catch (FileNotFoundException e) {
-        	msg = "Archivo no encontrado.";
-            e.printStackTrace();
-        } catch (Exception e) {
-        	msg = "Error volcando datos.";
-            e.printStackTrace();
-        }
-        model.addAttribute("msg", msg);
+		} catch (FileNotFoundException e) {
+			msg = "Archivo no encontrado.";
+			e.printStackTrace();
+		} catch (Exception e) {
+			msg = "Error volcando datos.";
+			e.printStackTrace();
+		}
+		model.addAttribute("msg", msg);
 		return "admin/subirFichero";
 	}
-	
 
 }

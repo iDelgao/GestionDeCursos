@@ -16,7 +16,7 @@
 	<div class="login-page">
 		<div class="form">
 			<form class="login-form" action="login.jsp" method="post">
-				<p>Usuario o contraseña erronea, por favor, vuelve a intentarlo.</p>
+				<p>Usuario o contraseña erronea, por favor vuelva a intentarlo.</p>
 				<button type="submit" value="aceptar">Aceptar</button>
 			</form>
 		</div>

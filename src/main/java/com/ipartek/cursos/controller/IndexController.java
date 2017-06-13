@@ -35,7 +35,7 @@ public class IndexController {
 	public String index(Model model) {
 		logger.info("Página de inicio");
 
-		model.addAttribute("cursos", serviceCurso.listar());
+		model.addAttribute("cursos", serviceCurso.listarDiez(null));
 
 		return "index";
 	}

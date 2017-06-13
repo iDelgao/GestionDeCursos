@@ -25,31 +25,37 @@ public class ServiceCursoImpl implements ServiceCurso {
 	private DAOCurso daoCurso;
 
 	@Override()
-	public List<Curso> listar() {
+	public List<Curso> listar(String filter) {
 		this.LOG.trace("Listar cursos");
-		return this.daoCurso.getAll();
+		return this.daoCurso.getAll(filter);
 	}
 
-	@Override
+	@Override()
+	public List<Curso> listarDiez(String filter) {
+		this.LOG.trace("Listar 10 cursos");
+		return this.daoCurso.getDiez(filter);
+	}
+
+	@Override()
 	public Curso buscarPorID(long id) {
 		this.LOG.trace("Buscar curso por su id: " + id);
 		Curso curso = daoCurso.getById(id);
 		return curso;
 	}
 
-	@Override
+	@Override()
 	public boolean crear(Curso c) {
 		this.LOG.trace("Crear curso: " + c);
 		return daoCurso.insert(c);
 	}
 
-	@Override
+	@Override()
 	public boolean modificar(Curso c) {
 		this.LOG.trace("Modificar curso: " + c);
 		return daoCurso.update(c);
 	}
 
-	@Override
+	@Override()
 	public boolean eliminar(long id) {
 		this.LOG.trace("Eliminando por id: " + id);
 		return daoCurso.delete(id);

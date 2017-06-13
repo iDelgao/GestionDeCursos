@@ -10,4 +10,4 @@
 <a href="admin/curso/migrar" class="btn btn-warning">Upload</a>
 <a href="admin" class="btn btn-default">Volver</a>
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../includes/footer_admin.jsp"%>

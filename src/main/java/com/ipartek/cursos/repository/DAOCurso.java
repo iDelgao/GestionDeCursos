@@ -7,9 +7,9 @@ import javax.sql.DataSource;
 import com.ipartek.cursos.domain.Curso;
 
 /**
- * Interfaz para manejar todo lo relativo a los usuarios
+ * Interfaz para manejar todo lo relativo a los cursos
  * 
- * @author Curso
+ * @author Iván Delgado
  *
  */
 public interface DAOCurso {
@@ -23,15 +23,17 @@ public interface DAOCurso {
 
 	/**
 	 * 
+	 * @param filter
 	 * @return Listado de todos los cursos
 	 */
-	List<Curso> getAll();
+	List<Curso> getAll(String filter);
 
 	/**
 	 * 
+	 * @param filter
 	 * @return Listado con los 10 últimos cursos
 	 */
-	List<Curso> getDiez();
+	List<Curso> getDiez(String filter);
 
 	/**
 	 * Seleccionar curso

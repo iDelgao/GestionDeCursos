@@ -3,28 +3,26 @@
 <h1>Listado de cursos</h1>
 	
 <div class="row">
-	<div class="col-md-8">
-		<div class="tabla_cursos">
-			<table class="table table-bordered">
+	<div class="col-md-12">
+			<table class="tg col-md-12">
 				<thead>
 					<tr>
-						<th>Id.</th>
-						<th>Nombre</th>
-						<th>Código</th>
+						<th class="tg-imnp">Id.</th>
+						<th class="tg-imnp">Nombre</th>
+						<th class="tg-imnp">Código</th>
 
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${cursos}" var="c">
 						<tr>
-							<td>${cursos.lastIndexOf(c)+1}</td>
-							<td>${c.nomCurso}</td>
-							<td>${c.codCurso}</td>
+							<td class="tg-eiwr">${cursos.lastIndexOf(c)+1}</td>
+							<td class="tg-pxng">${c.nomCurso}</td>
+							<td class="tg-7un6">${c.codCurso}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-		</div>
 	</div>
 </div>
 	
