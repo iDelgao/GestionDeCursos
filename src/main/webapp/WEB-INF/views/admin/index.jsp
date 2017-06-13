@@ -14,8 +14,7 @@
 			placeholder="Nombre del curso...">
 	</div>
 	<a href="admin/edit" class="btn btn-info" role="button">Crear Nuevo</a>
-	<a href="admin/curso/subir" class="btn btn-info" role="button">Subir
-		archivo</a>
+	<a href="admin/curso/subir" class="btn btn-info" role="button">Subir archivo</a>
 	<c:if test="${not empty msg}">
 		<span class="alert alert-success" role="alert">${msg}</span>
 	</c:if>
@@ -23,7 +22,6 @@
 		<span class="alert alert-success" role="alert">${param.msg}</span>
 	</c:if>
 </form>
-
 
 <div class="row">
 	<div class="col-md-12">

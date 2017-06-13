@@ -28,7 +28,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		
+
 		<!-- Validaciones -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -42,12 +42,13 @@
 			<version>5.2.4.Final</version>
 		</dependency>
 
-		<!-- JSON - Java Script Object Notation -->
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.11</version>
+			<version>1.9.13</version>
 		</dependency>
+
 
 		<!-- Persitencia -->
 		<dependency>

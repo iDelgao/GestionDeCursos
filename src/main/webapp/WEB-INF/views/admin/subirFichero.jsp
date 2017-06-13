@@ -1,11 +1,9 @@
 <%@ include file="../includes/header_admin.jsp"%>
-
-<h1>Subir datos</h1>
 <c:if test="${not empty msg}">
-		<p class="alert alert-success" role="alert">${msg}</p>
+		<h1 class="alert alert-success" role="alert">${msg}</h1>
 </c:if>
 <p>El archivo debe de estar ubicado en: <code>C:/workspace/GestionDeCursos/deploy/cursos.csv</code></p>
-<p>Después pulse el botón para iniciar el volcado de datos.</p>
+<p>Después pulse el botón <code>UPLOAD</code> para iniciar el proceso.</p>
 
 <a href="admin/curso/migrar" class="btn btn-warning">Upload</a>
 <a href="admin" class="btn btn-default">Volver</a>

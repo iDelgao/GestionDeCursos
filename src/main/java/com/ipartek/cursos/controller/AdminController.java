@@ -171,10 +171,10 @@ public class AdminController {
 				}
 			}
 			reader.close();
-			msg = "Fichero leido. Añadidos " + contador + " cursos nuevos";
+			msg = "Añadidos " + contador + " cursos.";
 
 		} catch (FileNotFoundException e) {
-			msg = "Archivo no encontrado.";
+			msg = "Fichero no encontrado.";
 			e.printStackTrace();
 		} catch (Exception e) {
 			msg = "Error volcando datos.";
