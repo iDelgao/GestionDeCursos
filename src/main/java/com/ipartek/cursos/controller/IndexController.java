@@ -22,7 +22,7 @@ public class IndexController {
 	@Autowired()
 	private ServiceCurso serviceCurso;
 
-	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(IndexController.class);
 
 	/**
 	 * 
@@ -33,11 +33,19 @@ public class IndexController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
-		logger.info("Página de inicio");
+		LOG.info("Página de inicio");
 
 		model.addAttribute("cursos", serviceCurso.listarDiez(null));
 
 		return "index";
+	}
+
+	@RequestMapping(value = "/accesibilidad", method = RequestMethod.GET)
+	public String accesibilidad(Model model) {
+
+		LOG.info("Entrando: Página accesibilidad.");
+
+		return "accesibilidad/index";
 	}
 
 }

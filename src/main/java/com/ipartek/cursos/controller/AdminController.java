@@ -150,8 +150,17 @@ public class AdminController {
 		return view;
 	}
 
+	/**
+	 * 
+	 * @param model
+	 *            Interfaz del model
+	 * @return a vista de subir fichero
+	 */
 	@RequestMapping(value = "/admin/curso/subir", method = RequestMethod.GET)
 	public String migrando(Model model) {
+
+		final int OCHO = 8;
+		final int UNO = 1;
 
 		String archivo = "C:/workspace/GestionDeCursos/deploy/cursos.csv";
 		String msg = "";
@@ -162,9 +171,9 @@ public class AdminController {
 			Curso curso = new Curso();
 			int contador = 0;
 			while ((nextLine = reader.readNext()) != null) {
-				System.out.println(nextLine[1] + nextLine[8]);
-				curso.setNomCurso(nextLine[1]);
-				curso.setCodCurso(nextLine[8]);
+				System.out.println(nextLine[UNO] + nextLine[OCHO]);
+				curso.setNomCurso(nextLine[UNO]);
+				curso.setCodCurso(nextLine[OCHO]);
 				if (!"".equals(curso.getNomCurso()) && !"".equals(curso.getCodCurso())) {
 					serviceCurso.crear(curso);
 					contador++;

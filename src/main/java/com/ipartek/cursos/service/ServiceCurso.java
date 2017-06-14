@@ -14,12 +14,15 @@ public interface ServiceCurso {
 
 	/**
 	 * 
+	 * @param filter
+	 *            filtro
 	 * @return lista de cursos
 	 */
 	List<Curso> listar(String filter);
 
 	/**
-	 * 
+	 * @param filter
+	 *            filtro
 	 * @return listar 10 últimos cursos
 	 */
 	List<Curso> listarDiez(String filter);

@@ -1,4 +1,3 @@
-/** Autocomplete **/
 $(function() {
 	console.log('Autocomplete cursos');
 	$("#buscador").autocomplete(
@@ -6,8 +5,6 @@ $(function() {
 				source : function(request, response) {
 					var url = "/cursos/api/curso/?filter="
 							+ $("#buscador").val().trim() + "";
-
-					// console.log("url para autocomplete: %s", url);
 
 					$.ajax({
 						"url" : url,

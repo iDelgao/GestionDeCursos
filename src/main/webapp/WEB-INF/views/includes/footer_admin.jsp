@@ -5,6 +5,7 @@
 
 <footer class="footer_admin" role="contentinfo">
       <div class="container">
+      <div class="col-md-6">
         <p class="copyright">&copy; 2017 - Iván Delgado García. All rights reserved.</p>
        
         <ul class="list-inline list-links">
@@ -33,16 +34,17 @@
             </a>
           </li>
         </ul>
+        </div>
+        <div class="col-md-6">
+        <a href="accesibilidad">Accesibilidad</a>
+        </div>
       </div>
     </footer>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="resources/js/btn_subir.js"></script>
-	
-<script
-	src="resources/js/filter.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="resources/js/btn_subir.js"></script>
+<script src="resources/js/filter.js"></script>
 
 </body>
 </html>

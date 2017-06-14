@@ -24,6 +24,7 @@ public interface DAOCurso {
 	/**
 	 * 
 	 * @param filter
+	 *            filtro
 	 * @return Listado de todos los cursos
 	 */
 	List<Curso> getAll(String filter);
@@ -31,6 +32,7 @@ public interface DAOCurso {
 	/**
 	 * 
 	 * @param filter
+	 *            filtro
 	 * @return Listado con los 10 últimos cursos
 	 */
 	List<Curso> getDiez(String filter);

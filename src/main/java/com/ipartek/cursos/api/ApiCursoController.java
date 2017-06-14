@@ -2,8 +2,6 @@ package com.ipartek.cursos.api;
 
 import java.util.ArrayList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,13 +12,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ipartek.cursos.domain.Curso;
 import com.ipartek.cursos.service.ServiceCurso;
 
+/**
+ * 
+ * Controlador de la API para el filtro
+ * 
+ * @author Iván Delgado
+ *
+ */
 @Controller()
 @RequestMapping(value = "/api/curso/")
 public class ApiCursoController {
-	private static final Logger LOG = LoggerFactory.getLogger(ApiCursoController.class);
 
 	@Autowired()
-	ServiceCurso serviceCurso;
+	private ServiceCurso serviceCurso;
 
 	/**
 	 * Listado de los cursos con un filtro opcional o sin el
@@ -31,7 +35,7 @@ public class ApiCursoController {
 	 * @return retorna los cursos ya sean con filtro o no
 	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public @ResponseBody ArrayList<Curso> listar(@RequestParam(value = "filter", required = false) String filter) {
+	public @ResponseBody() ArrayList<Curso> listar(@RequestParam(value = "filter", required = false) String filter) {
 
 		ArrayList<Curso> cursos = null;
 
@@ -41,7 +45,6 @@ public class ApiCursoController {
 
 		} else {
 
-			// TODO Fallo seguridad mostrar informacion del usuario privada
 			cursos = (ArrayList<Curso>) this.serviceCurso.listarDiez(null);
 
 		}

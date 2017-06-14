@@ -151,6 +151,28 @@ h1 {
 	margin: -25px 0px 0px -5px;
 }
 
+/***** BOTONES *****/
+
+.buttons {
+	color: #FFFFFF;
+	line-height: 10px;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4CAF50;
+	border: 0;
+	padding: 15px;
+	font-size: 0.875em;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+.buttons:hover {
+	background-color: #43A047 ;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 /***** BOTON SUBIR *****/
 #boton_up {
 	display: none;

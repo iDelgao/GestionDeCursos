@@ -16,7 +16,7 @@ import com.ipartek.cursos.domain.Curso;
 
 public class CursoMapper implements RowMapper<Curso> {
 
-	@Override
+	@Override()
 	public Curso mapRow(ResultSet rs, int rowNum) throws SQLException {
 
 		Curso c = new Curso();

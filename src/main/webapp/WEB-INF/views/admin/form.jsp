@@ -1,13 +1,13 @@
 <%@ include file="../includes/header.jsp"%>
 
-<a href="admin">Volver</a>
+
 
 <c:if test="${not empty curso.nomCurso}">
-	<h2>Detalle del curso: ${curso.nomCurso}</h2>
+	<h1>${curso.nomCurso}</h1>
 </c:if>
 
 <c:if test="${empty curso.nomCurso}">
-	<h2>Crear nuevo curso</h2>
+	<h1>Crear nuevo curso</h1>
 </c:if>
 
 ${msg}
@@ -31,25 +31,17 @@ ${msg}
 
 			<c:choose>
 				<c:when test="${curso.id == -1}">
-					<form:button type="submit">Crear</form:button>
+					<form:button type="submit" class="btn btn-info">Crear</form:button>
 				</c:when>
 				<c:otherwise>
-					<form:button type="submit">Modificar</form:button>
+					<form:button type="submit" class="btn btn-info">Modificar</form:button>
 				</c:otherwise>
 			</c:choose>
 
-			<form action="admin">
-				<input type="submit" value="Volver" />
-			</form>
+			
 
 		</form:form>
-
-		<br>
-
-		<c:if test="${curso.id != -1}">
-			<a style="color: red;" href="admin/delete/${curso.id}">Eliminar</a>
-		</c:if>
-
+		<a href="admin" class="btn btn-info">Volver</a>
 
 	</div>
 
