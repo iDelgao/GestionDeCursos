@@ -8,4 +8,4 @@
 <a href="admin/curso/migrar" class="btn btn-info">Upload</a>
 <a href="admin" class="btn btn-info">Volver</a>
 
-<%@ include file="../includes/footer_admin.jsp"%>
+<%@ include file="../includes/footer.jsp"%>

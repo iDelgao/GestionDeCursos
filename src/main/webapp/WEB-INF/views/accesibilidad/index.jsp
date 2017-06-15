@@ -1,6 +1,6 @@
-<%@ include file="../includes/header_admin.jsp"%>
+<%@ include file="../includes/header_simple.jsp"%>
 
-<h1>Listado de cursos</h1>
+<h1>Accesibilidad</h1>
 
 <p>Esta Web ha sido desarrollada siguiendo un diseño y una
 	programación accesibles, con el objetivo de garantizar el acceso
